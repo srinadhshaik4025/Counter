@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+       button {
+          padding: 20px;
+          font-size: 20px;
+          font-weight: bold;
+       }
+       .txt{
+           font-size: 20px;
+           font-weight: bolder;
+           padding: 30px;
+       }
+    </style>
+</head>
+<body>
+    
+<div>
+    <div>
+        <button id="btn1">+</button>
+        <button id="btn2">-</button>
+        <button id="reset">Reset</button>
+    </div>
+    <div class="txt">
+        Count : <span class="sp">0</span> 
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+
+     let counter = 0;
+
+     $("#btn1").click(incrementCount);
+     $("#btn2").click(decrementCount);
+     $("#reset").click(resetCount);
+     
+     function incrementCount()
+     {
+         ++counter
+         display();
+     }
+
+     function decrementCount()
+     {
+         if(counter != 0)
+         {
+            --counter;
+         }
+        
+         display();
+     }
+     function resetCount()
+     {
+         counter = 0;
+         display();
+     }
+
+     function display()
+     {
+        $(".txt").find(".sp").text(counter);
+     }
+
+
+    });
+</script>
+</body>
+</html>
